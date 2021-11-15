@@ -13,6 +13,8 @@ pipeline {
       steps{
         sh 'npm install'
         echo ("NPM installing")
+        sh 'node -v'
+        sh 'npm -v'
       }
     }
     stage('Run'){
