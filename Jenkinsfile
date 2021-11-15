@@ -1,9 +1,9 @@
 timeout(5) {
   node("master") {
-    stage("Code Check Out") {
+    /*stage("Code Check Out") {
       git branch: 'main', credentialsId: env.Credential_ID, url: 'https://github.com/balishaidashaik/Angularjs-repo.git'
       echo("${GIT_URL} Repository was successfully cloned.")
-    }
+    }*/
 	
     stage("Build Node Modules") {
       nodejs('Node') {
@@ -14,9 +14,9 @@ timeout(5) {
 	  
     stage("Test the AngularJs Application") {
       nodejs('Node') {
-      sh 'npm test'
+      sh 'npm run'
     }
-      echo("AngularJs Application is Built Successfully")
+      echo("AngularJs Application is Run Successfully")
     }	 
 	
     stage("Build/Package the AngularJs Application") {
@@ -27,10 +27,10 @@ timeout(5) {
     }
 
  
-    stage("Gzip the Angular Build") {
+    /*stage("Gzip the Angular Build") {
       sh("gzip -r ./build")
       echo("AngularJs Application is Built & Compressed Successfully")
-    }
+    }*/
     
   }
 }
