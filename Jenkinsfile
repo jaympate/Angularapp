@@ -18,7 +18,6 @@ pipeline {
     stage('Run'){
       steps{
         sh 'npm run'
-        sh 'npm start'
         echo ('Running the application')
       }
     }
