@@ -1,9 +1,11 @@
 pipeline {
     agent any
   stages {
-    stage('Angular CLI'){
+    stage('Config'){
       steps {
         sh 'npm config ls'
+        sh 'node -v'
+        sh 'npm -v'
         
       }
     }
